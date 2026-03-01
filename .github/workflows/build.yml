@@ -866,6 +866,9 @@ jobs:
         working-directory: ${{ env.KERNEL_ROOT }}
         run: |
           cat >> "$DEFCONFIG" << 'EOF'
+          CONFIG_KSU=y
+          CONFIG_TMPFS_XATTR=y
+          CONFIG_TMPFS_POSIX_ACL=y
           CONFIG_PID_NS=y
           CONFIG_IPC_NS=y
           CONFIG_USER_NS=y
